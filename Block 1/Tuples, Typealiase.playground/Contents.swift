@@ -2,11 +2,11 @@ import UIKit
 
 /*
 MARK: - Practice Tuples, Typealias
- • Create variables of Int, String, Float types and set numeric
- values in them
- Create a "sum" variable of type Double, which will contain
- •sum of all previous variables. Use type casting
- If the compiler asks you to use " (Force unwrap), put this sign after the type conversion, in the following lessons we will analyze this topic
+ • Создайте переменные типов Int, String, Float и задайте в них цифровые
+ значения
+ Создайте переменную "sum" типа Double, в которой будет содержаться
+ •сумма всех предыдущих переменных. Используйте приведение типов
+ Если компилятор просит использовать "!" (Force unwrap), поставьте этот знак после приведения типа, в следующих уроках мы будем разбирать эту тему
 */
 
 let numer: Int = 1000
@@ -19,18 +19,17 @@ sum = Double(numer) + Double(string1)! + Double(float1)
 
 
 /*
- • Create one Typealias that correspond to the types: String, Int, Float
-
- • Create three named Tuples with data:
- About the Movie - The name of the movie and the year of its release
- • Smartphone The name of the smartphone and its price
- • Country - The name of the country and its capital
-
- • Replace all types inside tuple with typalias
-
- • Output using the print command:
- • Movie name, Phone name, Country name about Then empty print()
- • Movie release year, Phone price, Country capital */
+ Practice
+ • Создайте по одному Typealias, которые соответствуют типам: String, Int, Float
+ • Создайте три именованных Tuple с данными:
+ о Фильм - Название фильма и год его выпуска
+ • Смартфон Название смартфона и его цена
+ • Страна - Название страны и ее столица
+ _ Все типы внутри tuple замените на typalias
+ • Выведите с помощью команды print:
+ • Название фильма, Название телефона, Название страны о Потом пустой print()
+ • Год выпуска фильма, цена телефона, столица страны
+ */
 
 typealias Name = String
 typealias EUR = Float
