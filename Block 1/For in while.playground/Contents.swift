@@ -16,7 +16,7 @@ let weekDays = ["monday", "tuesday", "wednesay", "thursday", "friday", "saturday
 
 for (index, weekday) in weekDays.enumerated() {
     if index < 3 {
-        print(index)
+        print(index + 1)
         print(weekday)
     }
 }
