@@ -37,21 +37,18 @@ print(array1)
 //print(array1.max()!)
 
 //2.2
-var minValue = 0
-var maxValue = 0
-for (index, value) in array1.enumerated() {
-    if array1[index] > maxValue {
-        maxValue = value
+var valuesMin = 0
+var valuesMax = 0
+
+for array in array1 {
+    if array < valuesMin {
+    valuesMin = array
+    } else if array > valuesMax {
+        valuesMax = array
     }
 }
-
-
-for (index, value) in array1.enumerated() {
-    if array1[index] < minValue {
-        minValue = value
-    }
-}
-print("MinValue: \(minValue), MaxValue: \(maxValue)")
+print(valuesMin, valuesMax)
+print("MinValue: \(valuesMin), MaxValue: \(valuesMax)")
 
 
 
