@@ -31,12 +31,8 @@ print(array1)
 
 
 
-// 2. Найдите минимальный и максимальный элемент в массиве и выведите его в консоль
-//2.1
-//print(array1.min()!)
-//print(array1.max()!)
+// 2. Найдите через цикл минимальный и максимальный элемент в массиве и выведите его в консоль
 
-//2.2
 var valuesMin = 0
 var valuesMax = 0
 
@@ -47,7 +43,7 @@ for array in array1 {
         valuesMax = array
     }
 }
-print(valuesMin, valuesMax)
+
 print("MinValue: \(valuesMin), MaxValue: \(valuesMax)")
 
 
