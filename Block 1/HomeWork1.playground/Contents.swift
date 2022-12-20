@@ -30,6 +30,44 @@ for (index, array2) in array1.enumerated() {
 print(array1)
 
 
+/* new ver, test
+ 
+ var randomNumbers: [Int] = []
+ for _ in 1...5 {
+     randomNumbers.append(Int.random(in: 0...100))
+ }
+ for _ in 1...5 {
+     randomNumbers.append(Int.random(in: -100...0))
+ }
+
+ for (index, number) in randomNumbers.enumerated() where number < 0 {
+     randomNumbers[index] = 0
+ }
+
+ func selectMaxAndMin(array: [Int]) -> (Int, Int) {
+     var maxValue = array[0]
+     var minValue = array[0]
+     for (index, _) in array.enumerated() {
+         if array[index] >= maxValue {
+             maxValue = array[index]
+         } else {
+             minValue = array[index]
+         }
+     }
+     return (maxValue, minValue)
+ }
+ selectMaxAndMin(array: randomNumbers)
+
+ func sumOfArray(array: [Int]) -> Int {
+     var sum = 0
+     for numbers in randomNumbers {
+         sum += numbers
+     }
+     return sum
+ }
+ sumOfArray(array: randomNumbers)
+ */
+
 
 // 2. Найдите через цикл минимальный и максимальный элемент в массиве и выведите его в консоль
 
@@ -58,6 +96,35 @@ print(valueSum)
 
 
 
+
+//var dictionary = ["first": 1, "second": 2, "third": 3, "fourth": 4]
+//let num = dictionary["first"]
+//dictionary["first"] = dictionary["fourth"]
+//dictionary["fourth"] = num
+//print(dictionary)
+
+
+// 4. Создайте массив с названиями всех месяцев, типа String. Затем создайте словарь и с помощью цикла задайте ему значения на основании массива: где в качестве ключей будут выступать цифры (индексы), а в качестве значений - элементы массива.
+
+//var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+//
+//var dict: [Int: String] = [:]
+//var count = 0
+//for value in months {
+//    count += 1
+//    dict[count] = value
+//}
+
+//newVersion
+var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+
+
+var monthDictionary = [Int: String]()
+for (index, month) in months.enumerated() {
+    monthDictionary[index+1] = month
+}
+
+
 // 5. Создайте словарь: var dictionary = ["first": 1, "second": 2, "third": 3, "fourth": 4] Поменяйте местами значения по ключам “first” и “fourth”. Выведите в консоль итоговый словарь
 
 var dictionary = ["first": 1, "second": 2, "third": 3, "fourth": 4]
@@ -71,27 +138,6 @@ dictionary["first"] = change1
 //print(dictionary)
 
 
-
-
-
-
-//var dictionary = ["first": 1, "second": 2, "third": 3, "fourth": 4]
-//let num = dictionary["first"]
-//dictionary["first"] = dictionary["fourth"]
-//dictionary["fourth"] = num
-//print(dictionary)
-
-
-// 4. Создайте массив с названиями всех месяцев, типа String. Затем создайте словарь и с помощью цикла задайте ему значения на основании массива: где в качестве ключей будут выступать цифры (индексы), а в качестве значений - элементы массива.
-
-var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
-
-var dict: [Int: String] = [:]
-var count = 0
-for value in months {
-    count += 1
-    dict[count] = value
-}
 // 6. Создайте пустой словарь calendar, так же вам понадобиться массив с месяцами из четвертого задания. С помощью цикла от 1970 до 2022 задайте значения для словаря. В качестве ключа пусть будет год, а значение это массив с месяцами.
 
 var calendar: [Int: [String]] = [:]
@@ -121,6 +167,35 @@ print(months)
 //    calendar[years]?.append(contentsOf: monthsNew)
 //}
 
+/* 7.1 На основании словаря, который у вас получился в седьмом задании,
+ давайте создадим новый словарь, который будет включать в себя также и даты,
+ a именно массив с числами от 1 до 31:
+ 
+ ● Создайте массив с числами от 1 до 31 с помощью цикла.
+ ● Создайте новый словарь calendarPro, где в качестве ключей будут года, в
+ качестве значений вложенные словари. В которых в качестве ключей названия
+ месяцев, а в качестве значений массив с днями созданный выше.
+ ● Выведите в консоль 1 сентября 2019 года.
+ 
+ PS: Для заполнения calendarPro используйте только созданный массив с
+ числами, и словарь с месяцами, и никаких других данных
+ */
+var calendarPro: [Int: [String: [Int]]] = [:]
+var simpleCalendar: [String: [Int]] = [:]
+
+var daysOfMonth = [Int]()
+var dayNum = 0
+for _ in 1...31 {
+    dayNum += 1
+    daysOfMonth.append(dayNum)
+}
+for month in months {
+    simpleCalendar[month] = daysOfMonth
+}
+for year in 1991...2022 {
+    calendarPro[year] = simpleCalendar
+}
+print(calendarPro[2019]!["September"]![0])
 
 
 
