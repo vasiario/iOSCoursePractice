@@ -44,6 +44,9 @@ print(countryCity, cityPostCod, studentTest)
 var arrayOfKeys = [String](newVarDict.keys)
 print(arrayOfKeys)
 
+var arrayOfValues = [Any](newVarDict.values)
+print(arrayOfValues)
+
 /*
  var test = newVarDict.keys
  var someArrey = [String]()
