@@ -299,6 +299,8 @@ func addValues<T: Summable>(_ val1: T, _ val2: T) -> T {
     val1 + val2
 }
 
+
+
 var str1 = 10
 var str2 = 20
 addValues(str1, str2)
@@ -306,12 +308,38 @@ print(addValues(10, 20))
 
 
 
-/* ●Тип, который содержит свойство - Dictionary с данными. Напишите функции,
-которые добавляют в этот словарь значение по ключу и достают значение по ключу
- */
-
-
 /*
  6. Выполните практику второго слайда. Здесь вы можете реализовать либо стек, либо связанный список (stack / linked list)
  Задачи сложнее чем кажутся. Не забывайте, что вы можете искать информацию в интернете (информацию, но не решения ;)
  */
+
+
+
+class Stack<Element> {
+    
+    var allData: [Element] = []
+    
+    func push(element: Element) {
+        allData.append(element)
+    }
+    
+    func pop() -> Element? {
+        //        defer { allData.removeLast() }
+        return allData.removeLast()
+    }
+    
+}
+    let myStack = Stack<String>()
+    myStack.push(element: "Uno")
+    myStack.push(element: "Dos")
+    myStack.push(element: "Tres")
+    myStack.push(element: "Quatro")
+
+
+    let line1 = myStack.pop()
+    let line2 = myStack.pop()
+    let line3 = myStack.pop()
+    let line4 = myStack.pop()
+
+print(myStack.allData)
+

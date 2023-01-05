@@ -52,10 +52,4 @@ extension Wash {
 
 
 
-extension Test1 {
-    var name: String { return "Hello!!!" }
-    var power: Int { return 2 }
-    func washDishes() {
-        print("hello")
-    }
-}
+
